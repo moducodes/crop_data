@@ -1,1 +1,29 @@
+Crop Data | Django REST API
+----------------------------------
+Instructions to set up a local server
+-----------------------------------
+Clone the Git repo and proceed with the following steps.
 
+1. Virtual Env
+Create a Python virtual env to install the dependencies.
+>> python -m venv djangodev
+Activate the virtual env by navigating to the its Scripts directory in the command line and running activate.bat
+
+2. Install dependencies
+Navigate to the project's root folder. Run the following command.
+>> pip install -r requirements.txt
+
+3. Database server in MySQL
+Open MySQL Workbench and create a schema with the name 'crops_data' with the local MySQL server running on its default 3306 port.
+Go to crop_data/settings.py and change the database username and password to your credentials.
+
+4. Django server
+Open cmd in the root directory of the project and run the following commands.
+>> python manage.py migrate
+Runs all the necessary database migration scripts.  
+>> python manage.py createsuperuser
+Create a user for yourself with admin privileges.
+>> python manage.py runserver
+
+5. Insert crop data
+Open the SQL script in the project named 'crops_data_insertion.sql' in Workbench and run it. The crop data must be populted the crops table now. Verify it.
